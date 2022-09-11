@@ -1,6 +1,6 @@
-package com.example.floraflowapi.repository;
+package com.example.cookinrecipesapi.repository;
 
-import com.example.floraflowapi.entity.user;
+import com.example.cookinrecipesapi.entity.user;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface userRepository extends JpaRepository<user,Integer> {

@@ -1,7 +1,7 @@
-package com.example.floraflowapi.service;
+package com.example.cookinrecipesapi.service;
 
-import com.example.floraflowapi.entity.user;
-import com.example.floraflowapi.repository.userRepository;
+import com.example.cookinrecipesapi.entity.user;
+import com.example.cookinrecipesapi.repository.userRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,7 +10,7 @@ import java.util.List;
 public class userService {
     private final userRepository userRepository;
 
-    public userService(com.example.floraflowapi.repository.userRepository userRepository) {
+    public userService(com.example.cookinrecipesapi.repository.userRepository userRepository) {
         this.userRepository = userRepository;
     }
 

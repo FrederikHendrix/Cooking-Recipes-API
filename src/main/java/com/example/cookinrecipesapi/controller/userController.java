@@ -1,7 +1,7 @@
-package com.example.floraflowapi.controller;
+package com.example.cookinrecipesapi.controller;
 
-import com.example.floraflowapi.entity.user;
-import com.example.floraflowapi.service.userService;
+import com.example.cookinrecipesapi.entity.user;
+import com.example.cookinrecipesapi.service.userService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
