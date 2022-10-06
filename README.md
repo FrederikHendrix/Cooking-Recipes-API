@@ -1,10 +1,7 @@
-# FloraFlowAPI
+# Cooking-Recipes-API
 
 ## Get
-> "/api/get/arduinoplant/{id}" or "/api/get/arduinoplant"
+> "/api/get/user/{id}" or "/api/get/users"
 ## Post
-> "/api/post/arduinoplant"
-## Put
-> "/api/put/arduinoplant"
-## Delete
-> "/api/delete/arduinoplant/{id}"
+> "/api/post/user"
+
