@@ -2,6 +2,7 @@ package com.example.cookinrecipesapi.service;
 
 import com.example.cookinrecipesapi.entity.user;
 import com.example.cookinrecipesapi.repository.userRepository;
+import com.example.cookinrecipesapi.repository.userRepositoryCustom;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
