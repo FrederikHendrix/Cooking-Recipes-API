@@ -12,6 +12,7 @@ import java.util.List;
 @RequestMapping("/api")
 @CrossOrigin
 public class userController {
+    //usercontroller works only with JPA repository functionallity
 
     @Autowired
     private userService service;

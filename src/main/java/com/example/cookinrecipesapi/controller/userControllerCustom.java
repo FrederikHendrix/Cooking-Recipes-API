@@ -12,6 +12,7 @@ import java.util.List;
 @RequestMapping("/api")
 @CrossOrigin
 public class userControllerCustom {
+    //usercontrollercustom works only with selfmade functions
 
    @Autowired
    private userServiceCustom userServiceCustom;
