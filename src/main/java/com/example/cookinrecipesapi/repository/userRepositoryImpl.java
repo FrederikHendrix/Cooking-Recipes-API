@@ -21,4 +21,13 @@ public class userRepositoryImpl implements userRepositoryCustom{
         query.setParameter("authid", authid);
         return query.getSingleResult();
     }
+
+    @SuppressWarnings("unused")
+    public int getUserIdByAuthid(String authid) {
+        String hql = "SELECT e FROM user e WHERE e.authid= :authid";
+        TypedQuery<user> query = entityManager.createQuery(hql, user.class);
+        query.setParameter("authid", authid);
+        user user = query.getSingleResult();
+        return user.getId();
+    }
 }

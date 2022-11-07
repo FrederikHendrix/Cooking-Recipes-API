@@ -4,4 +4,6 @@ import com.example.cookinrecipesapi.entity.user;
 
 public interface userRepositoryCustom {
     user getUserByAuthid(String authid);
+
+    int getUserIdByAuthid(String authid);
 }

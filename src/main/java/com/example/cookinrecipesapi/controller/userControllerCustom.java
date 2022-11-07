@@ -18,5 +18,8 @@ public class userControllerCustom {
 
     @GetMapping(value = "/get/usercustom/{authid}")
    public user getUserByAuthid(@PathVariable String authid){return userServiceCustom.getUserByAuthid(authid);}
+
+    @GetMapping(value = "/get/usercustomid/{authid}")
+    public int getUserIdByAuthid(@PathVariable String authid){return userServiceCustom.getUserIdByAuthid(authid);}
 }
 

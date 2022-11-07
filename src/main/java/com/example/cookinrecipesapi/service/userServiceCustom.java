@@ -17,4 +17,9 @@ public class userServiceCustom {
         return userRepositoryCustom.getUserByAuthid(authid);
     }
 
+    public int getUserIdByAuthid(String authid)
+    {
+        return userRepositoryCustom.getUserIdByAuthid(authid);
+    }
+
 }
