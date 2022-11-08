@@ -21,7 +21,7 @@ public class recipeController {
     }
 
     @PostMapping("/post/recipe")
-    public String createRecipe(recipe recipe)
+    public String createRecipe(@RequestBody recipe recipe)
     {
         service.createRecipe(recipe);
         return "New Recipe Has Been Added";

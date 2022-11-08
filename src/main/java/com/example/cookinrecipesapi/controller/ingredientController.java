@@ -3,10 +3,7 @@ package com.example.cookinrecipesapi.controller;
 import com.example.cookinrecipesapi.entity.ingredient;
 import com.example.cookinrecipesapi.service.ingredientService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,7 +15,7 @@ public class ingredientController {
     private ingredientService service;
 
     @PostMapping("/post/ingredients")
-    public String createIngredients(List<ingredient> ingredients)
+    public String createIngredients(@RequestBody List<ingredient> ingredients)
     {
         service.createIngredients(ingredients);
         return "Ingredients have been Added to Recipe";
