@@ -25,4 +25,9 @@ public class recipeService {
     {
         return recipeRepository.save(recipe);
     }
+
+    public int getRecipeIdFromTitle(String title)
+    {
+        return recipeRepository.getRecipeIdFromTitle(title);
+    }
 }

@@ -26,4 +26,10 @@ public class recipeController {
         service.createRecipe(recipe);
         return "New Recipe Has Been Added";
     }
+
+    @GetMapping("/get/recipeid/{title}")
+    public int getRecipeIdFromTitle(@PathVariable String title)
+    {
+        return service.getRecipeIdFromTitle(title);
+    }
 }
