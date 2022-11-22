@@ -27,6 +27,9 @@ public class recipeController {
         return "New Recipe Has Been Added";
     }
 
+    @GetMapping("/get/recipes/{categoryid}")
+    public List<recipe> getRecipesByCategoryId(@PathVariable int categoryid){return service.getRecipesByCategoryId(categoryid);}
+
     @GetMapping("/get/recipeid/{title}")
     public int getRecipeIdFromTitle(@PathVariable String title)
     {

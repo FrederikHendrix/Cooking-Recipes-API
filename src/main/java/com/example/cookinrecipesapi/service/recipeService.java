@@ -21,6 +21,8 @@ public class recipeService {
         return recipeRepository.findAll();
     }
 
+    public List<recipe> getRecipesByCategoryId(int categoryid){return recipeRepository.findByCategoryid(categoryid);}
+
     public recipe createRecipe(recipe recipe)
     {
         return recipeRepository.save(recipe);
