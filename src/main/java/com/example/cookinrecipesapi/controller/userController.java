@@ -2,7 +2,6 @@ package com.example.cookinrecipesapi.controller;
 
 import com.example.cookinrecipesapi.entity.user;
 import com.example.cookinrecipesapi.service.userService;
-import com.example.cookinrecipesapi.service.userServiceCustom;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,5 +34,11 @@ public class userController {
     {
         return service.getUserById(id);
     }
+
+    @GetMapping(value = "/get/user/{authid}")
+    public user getUserByAuthid(@PathVariable String authid){return service.getUserByAuthid(authid);}
+
+    @GetMapping(value = "/get/userid/{authid}")
+    public int getUserIdByAuthid(@PathVariable String authid){return service.getUserIdByAuthid(authid);}
 
 }

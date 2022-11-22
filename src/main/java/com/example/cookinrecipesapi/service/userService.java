@@ -2,7 +2,6 @@ package com.example.cookinrecipesapi.service;
 
 import com.example.cookinrecipesapi.entity.user;
 import com.example.cookinrecipesapi.repository.userRepository;
-import com.example.cookinrecipesapi.repository.userRepositoryCustom;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -26,6 +25,16 @@ public class userService {
 
     public user getUserById(int id){
         return userRepository.findById(id).orElse(null);
+    }
+
+    public user getUserByAuthid(String authid)
+    {
+        return userRepository.findByAuthid(authid);
+    }
+
+    public int getUserIdByAuthid(String authid)
+    {
+        return userRepository.getUserIdByAuthid(authid);
     }
 
 }
