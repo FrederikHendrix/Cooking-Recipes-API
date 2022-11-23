@@ -20,4 +20,7 @@ public class ingredientController {
         service.createIngredients(ingredients);
         return "Ingredients have been Added to Recipe";
     }
+
+    @GetMapping("get/ingredients/{recipeid}")
+    public List<ingredient> getIngredientsFromRecipeId(@PathVariable int recipeid){return service.getIngredientsFromRecipeId(recipeid);}
 }

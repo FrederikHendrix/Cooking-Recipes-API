@@ -29,7 +29,7 @@ public class userController {
         return "New User is Added";
     }
 
-    @GetMapping(value = "/get/user/{id}")
+    @GetMapping(value = "/get/userbyid/{id}")
     public user getUserById(@PathVariable int id)
     {
         return service.getUserById(id);

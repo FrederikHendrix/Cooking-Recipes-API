@@ -19,4 +19,6 @@ public class ingredientService {
     {
         return ingredientRepository.saveAll(ingredients);
     }
+
+    public List<ingredient> getIngredientsFromRecipeId(int recipeid){return ingredientRepository.findByRecipeid(recipeid);}
 }

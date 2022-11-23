@@ -32,4 +32,6 @@ public class recipeService {
     {
         return recipeRepository.getRecipeIdFromTitle(title);
     }
+
+    public recipe findById(int id){return recipeRepository.findById(id);}
 }
