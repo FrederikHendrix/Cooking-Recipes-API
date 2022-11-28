@@ -20,5 +20,11 @@ public class ingredientService {
         return ingredientRepository.saveAll(ingredients);
     }
 
+    public String deleteIngredients(int recipeid)
+    {
+        ingredientRepository.deleteByRecipeid(recipeid);
+        return "ingredients have been deleted";
+    }
+
     public List<ingredient> getIngredientsFromRecipeId(int recipeid){return ingredientRepository.findByRecipeid(recipeid);}
 }

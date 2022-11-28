@@ -21,6 +21,12 @@ public class ingredientController {
         return "Ingredients have been Added to Recipe";
     }
 
+    @DeleteMapping("/delete/ingredients/{id}")
+    public String deleteIngredientsByRecipeid(@PathVariable int id){
+        String messageIngredients =  service.deleteIngredients(id);
+        return  messageIngredients;
+    }
+
     @GetMapping("get/ingredients/{recipeid}")
     public List<ingredient> getIngredientsFromRecipeId(@PathVariable int recipeid){return service.getIngredientsFromRecipeId(recipeid);}
 }

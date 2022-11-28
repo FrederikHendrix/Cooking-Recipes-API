@@ -1,4 +1,4 @@
 FROM openjdk:11
-EXPOSE 8080
+COPY src/main/java/com.example.cookingrecipesapi/ /tmp
 ADD target/CookingRecipesAPI.jar CookingRecipesAPI.jar
 ENTRYPOINT ["java", "-jar", "/CookingRecipesAPI.jar"]

@@ -1,6 +1,7 @@
 package com.example.cookinrecipesapi.controller;
 
 import com.example.cookinrecipesapi.entity.recipe;
+import com.example.cookinrecipesapi.service.ingredientService;
 import com.example.cookinrecipesapi.service.recipeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +15,9 @@ public class recipeController {
     @Autowired
     private recipeService service;
 
+    @Autowired
+    private ingredientService ingredientService;
+
     @GetMapping("/get/recipes")
     public List<recipe> getAllRecipes()
     {
@@ -25,6 +29,18 @@ public class recipeController {
     {
         service.createRecipe(recipe);
         return "New Recipe Has Been Added";
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public String deleteRecipe(@PathVariable int id){
+        String messageRecipe = service.deleteRecipeById(id);
+        return  messageRecipe;
+    }
+
+    @PutMapping("/recipe/update")
+    public recipe updateRecipe(@RequestBody recipe recipe)
+    {
+        return service.updateRecipe(recipe);
     }
 
     @GetMapping("get/recipe/{id}")

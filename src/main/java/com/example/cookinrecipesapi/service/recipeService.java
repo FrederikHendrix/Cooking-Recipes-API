@@ -34,4 +34,18 @@ public class recipeService {
     }
 
     public recipe findById(int id){return recipeRepository.findById(id);}
+
+    public String deleteRecipeById(int id){
+
+        recipeRepository.deleteById(id);
+        return "recipe with id has been deleted = " + id;
+    }
+
+    public recipe updateRecipe(recipe recipe)
+    {
+        recipe existingRecipe = recipeRepository.findById(recipe.getId());
+        existingRecipe.setTitle(recipe.getTitle());
+        existingRecipe.setDescription(recipe.getDescription());
+        return recipeRepository.save(existingRecipe);
+    }
 }
