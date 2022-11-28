@@ -10,5 +10,5 @@ public interface ingredientRepository extends JpaRepository<ingredient, Integer>
 
     void deleteByRecipeid(int recipeid);
 
-    
+
 }
