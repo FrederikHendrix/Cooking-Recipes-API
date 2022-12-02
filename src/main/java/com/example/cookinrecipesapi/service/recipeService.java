@@ -1,8 +1,10 @@
 package com.example.cookinrecipesapi.service;
 
 import com.example.cookinrecipesapi.entity.recipe;
+import org.hibernate.hql.internal.QueryExecutionRequestException;
 import org.springframework.stereotype.Service;
 import com.example.cookinrecipesapi.repository.recipeRepository;
+import com.example.cookinrecipesapi.exception.RequestException;
 
 import java.util.List;
 
@@ -13,39 +15,80 @@ public class recipeService {
 
     public recipeService(com.example.cookinrecipesapi.repository.recipeRepository recipeRepository)
     {
-        this.recipeRepository = recipeRepository;
+            this.recipeRepository = recipeRepository;
     }
 
     public List<recipe> getAllRecipes()
     {
-        return recipeRepository.findAll();
+        try{
+            return recipeRepository.findAll();
+        }catch(Exception e){
+            throw new RequestException("Couldn't find all recipes");
+        }
+
     }
 
-    public List<recipe> getRecipesByCategoryId(int categoryid){return recipeRepository.findByCategoryid(categoryid);}
+    public List<recipe> getRecipesByCategoryId(int categoryid)
+    {
+        try{
+            return recipeRepository.findByCategoryid(categoryid);
+        }catch(Exception e){
+            throw new RequestException("Couldn't find products with categoryId: " + categoryid);
+        }
+
+    }
 
     public recipe createRecipe(recipe recipe)
     {
-        return recipeRepository.save(recipe);
+        try{
+            return recipeRepository.save(recipe);
+        }catch(Exception e){
+            throw new RequestException("Couldn't create recipe");
+        }
+
     }
 
     public int getRecipeIdFromTitle(String title)
     {
-        return recipeRepository.getRecipeIdFromTitle(title);
+        try{
+            return recipeRepository.getRecipeIdFromTitle(title);
+        }catch(Exception e){
+            throw new RequestException("Couldn't find recipe with title: " + title);
+        }
+
     }
 
-    public recipe findById(int id){return recipeRepository.findById(id);}
+    public recipe findById(int id)
+    {
+        try{
+            return recipeRepository.findById(id);
+        }catch(Exception e){
+            throw new RequestException("Couldn't find the recipe by id");
+        }
 
-    public String deleteRecipeById(int id){
+    }
 
-        recipeRepository.deleteById(id);
-        return "recipe with id has been deleted = " + id;
+    public String deleteRecipeById(int id)
+    {
+        try{
+            recipeRepository.deleteById(id);
+            return "recipe with id has been deleted = " + id;
+        }catch(Exception e){
+            throw new RequestException("Couldn't delete recipe by id");
+        }
+
     }
 
     public recipe updateRecipe(recipe recipe)
     {
-        recipe existingRecipe = recipeRepository.findById(recipe.getId());
-        existingRecipe.setTitle(recipe.getTitle());
-        existingRecipe.setDescription(recipe.getDescription());
-        return recipeRepository.save(existingRecipe);
+        try{
+            recipe existingRecipe = recipeRepository.findById(recipe.getId());
+            existingRecipe.setTitle(recipe.getTitle());
+            existingRecipe.setDescription(recipe.getDescription());
+            return recipeRepository.save(existingRecipe);
+        }catch(Exception e){
+            throw new RequestException("Couldn't Update Recipe");
+        }
+
     }
 }

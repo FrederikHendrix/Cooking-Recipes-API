@@ -54,8 +54,6 @@ class recipeRepositoryTest {
         // assert
         assertThat(recipeIdFromTitle).isNotEqualTo(recipeId);
 
-
-
     }
 
     @Test
@@ -105,8 +103,6 @@ class recipeRepositoryTest {
 
         // assert
         assertThat(recipes.get(0)).isEqualTo(recipeCheck);
-
-
     }
 
     @Test
@@ -122,8 +118,6 @@ class recipeRepositoryTest {
 
         // assert
         assertThat(recipes.get(0)).isNotEqualTo(recipeCheck);
-
-
     }
 
 }
