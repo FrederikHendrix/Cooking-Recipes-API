@@ -97,4 +97,15 @@ class recipeServiceTest {
         verify(recipeRepository).findById(recipeId);
 
     }
+
+    @Test
+    void canDeleteById() {
+        //when
+        underTest.deleteRecipeById(1);
+
+        //then
+        verify(recipeRepository).deleteById(1);
+
+    }
+
 }
