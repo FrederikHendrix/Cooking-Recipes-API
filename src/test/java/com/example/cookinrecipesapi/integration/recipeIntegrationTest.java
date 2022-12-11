@@ -22,8 +22,6 @@ import org.springframework.test.web.servlet.MockMvc;
 @WebMvcTest
 public class recipeIntegrationTest {
 
-
-
     @Autowired
     ObjectMapper objectMapper;
 
