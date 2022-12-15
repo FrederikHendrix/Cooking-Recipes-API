@@ -8,6 +8,7 @@ class CookingRecipesApiApplicationTests {
 
     @Test
     void contextLoads() {
+
     }
 
 }

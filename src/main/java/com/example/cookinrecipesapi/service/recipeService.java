@@ -1,14 +1,14 @@
 package com.example.cookinrecipesapi.service;
 
 import com.example.cookinrecipesapi.entity.recipe;
-import org.hibernate.hql.internal.QueryExecutionRequestException;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 import com.example.cookinrecipesapi.repository.recipeRepository;
 import com.example.cookinrecipesapi.exception.RequestException;
 
 import java.util.List;
 
-@Service
+@Component
 public class recipeService {
 
     private final recipeRepository recipeRepository;
@@ -33,7 +33,7 @@ public class recipeService {
         try{
             return recipeRepository.findByCategoryid(categoryid);
         }catch(Exception e){
-            throw new RequestException("Couldn't find products with categoryId: " + categoryid);
+            throw new RequestException("Couldn't find products with categoryId");
         }
 
     }
@@ -53,7 +53,7 @@ public class recipeService {
         try{
             return recipeRepository.getRecipeIdFromTitle(title);
         }catch(Exception e){
-            throw new RequestException("Couldn't find recipe with title: " + title);
+            throw new RequestException("Couldn't find recipe with title");
         }
 
     }
