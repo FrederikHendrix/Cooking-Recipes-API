@@ -20,5 +20,5 @@ EXPOSE 8085
 
 WORKDIR /app
 
-COPY --from=build-env /app/target/CookingRecipesAPI.jar ./CookingRecipesAPI.jar
+COPY --from=build-env /app/target/CookingRecipesAPI-0.0.1-SNAPSHOT.jar ./CookingRecipesAPI-0.0.1-SNAPSHOT.jar
 CMD ["/usr/bin/java", "-jar", "/app/CookingRecipesAPI.jar"]
