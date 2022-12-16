@@ -66,6 +66,13 @@ class recipeControllerTest {
     }
 
     @Test
+    void ShouldGiveOKStatusWhenDeleteRecipe() throws Exception {
+        mockMvc.perform(delete("/api/delete/{id}", 1))
+                .andDo(print())
+                .andExpect(status().isOk());
+    }
+
+    @Test
     void ShouldThrowExceptionWhenGetAllRecipes() throws Exception {
         when(recipeService.getAllRecipes()).thenThrow(new RequestException("Couldn't find all recipes"));
 
@@ -83,6 +90,5 @@ class recipeControllerTest {
                 .andDo(print())
                 .andExpect(status().is4xxClientError());
     }
-
 
 }
