@@ -57,6 +57,5 @@ jobs:
         with:
           context: ./
           file: ./Dockerfile
-          image: ${{ secrets.DOCKERHUB_USERNAME }}/cooking-recipes-api
           push: true
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/cooking-recipes-api:latest
